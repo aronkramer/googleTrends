@@ -1,0 +1,127 @@
+﻿@model IEnumerable<BillTracker.Models.TopKeywordViewModels>
+
+@{
+    ViewBag.Title = "Top Keywords";
+}
+
+<div id="kwApp">
+    <center>
+        <h2>Top Keywords For Each Product.</h2>
+        <div>
+            <button class="btn btn-success modalButton" data-toggle="modal" data-target="#myModal">Add Sku</button>
+
+            <a href="/SKU/DownloadKW" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
+                <i class="fas fa-download fa-sm text-white-50"></i> Download
+            </a>
+        </div>
+        <hr />
+
+        <table class="table table-bordered table-hover col-md-9">
+            <tr style="background-color: #1cc88a">
+                <th style="color:white">SKU</th>
+                <th style="color:white">ASIN</th>
+                <th style="color:white">Top Keyword</th>
+                <th style="color:white">Actions</th>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.SKU</td>
+
+                    <td>@x.Asin</td>
+
+                    <td>@x.Keyword</td>
+
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-warning" data-toggle="modal" data-target="#editModal" v-on:click="makeEditable(@x.Id)">Edit</a>
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" v-on:click="GetSkusById(@x.Id)">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </center>
+
+
+    <!-- Modal add sku-->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center style="margin:auto"><h3>Add Sku</h3></center>
+                </div>
+                <div class="modal-body">
+                    <form id="clearForm1" method="POST" action="/Sku/AddSku">
+                        <center>
+                            <input name="Sku" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="SKU" required/>
+                            <input name="Asin" class="form-control" style="margin:auto; display:inline-block; width:220px; text-transform:uppercase" placeholder="Asin" />
+                            <input name="Keyword" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="Keyword" required/>
+                        </center>
+                        <br />
+                        <div class="modal-footer well">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" v-on:click="clear()">Cancel</button>
+                            <input class="btn btn-primary" name="commit" type="submit" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal delete -->
+    <div id="deleteModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <h1 class="modal-title" style="color:red">Are you sure?</h1>
+                        <p>Do you really want to delete</p>
+                        <p>sku: {{itemQuestion.SKU}}, Asin: {{itemQuestion.Asin}}, Keyword: {{itemQuestion.Keyword}} ?</p>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger" v-on:click="deleteSku(itemQuestion.Id)">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal edit -->
+    <div id="editModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <h1 class="modal-title" style="color:blue">Edit:</h1>
+                        <p style="background-color:yellow; color:blue">sku: {{itemQuestion.SKU}}, Asin: {{itemQuestion.Asin}}, Keyword: {{itemQuestion.Keyword}} ?</p>
+                        <form id="clearForm2" method="POST" action="/Sku/EditSku">
+                            <input name="Sku" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="SKU" />
+                            <input name="Asin" class="form-control" style="margin:auto; display:inline-block; width:220px; text-transform:uppercase" placeholder="Asin" />
+                            <input name="Keyword" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="Keyword" />
+                            <input hidden name="theid" v-model="itemQuestion.Id"/>
+                            <br /><br />
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="clear()">Cancel</button>
+                                <input type="submit" name="commit" class="btn btn-danger" value="Save">
+                            </div>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/Vue/TopKeywords-Vue.js"></script>
+    <link href="~/Scripts/CSS/TopKw.css" rel="stylesheet" />
+}

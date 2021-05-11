@@ -1,0 +1,58 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Google Trends";
+}
+
+<div>
+    @if (!String.IsNullOrEmpty(Model))
+    {
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <span>@Model - New Trends are ready for downloading</span>
+        </div>
+    }
+</div>
+
+
+<div id="trendApp" style="margin:auto; width:50%; text-align:center">
+    <h2>Google Trends</h2>
+    <h3>Last Update - @ViewBag.LatestUpdate</h3>
+    <hr />
+    <div class="btn-toolbar">
+        @*<div class="mr-3">
+            <button class="btn btn-lg btn-success modalButton" data-toggle="modal" data-target="#UpdateModal">Update Trends</button>
+        </div>*@
+
+        <a href="/Trends/DownloadTrends" class="btn btn-lg btn-primary">
+            <i class="fas fa-download fa-sm text-white-50"></i> Download Latest Trends
+        </a>
+    </div>
+</div>
+
+<!-- Modal add sku-->
+@*<div id="UpdateModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-lg">
+            <div class="modal-body">
+                <h3>Please Only Update Once A Week. This can take some time.</h3>
+                <h3>Please don't click on any buttons on this page while it's updating.</h3>
+               
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-lg btn-danger" data-dismiss="modal">Cancel</button>
+                <form action="/trends/index">
+                    <input value="hello" type="hidden" name="dataGetter" />
+                    <button class="btn btn-lg btn-success">Begin Updating Now!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+
+
+@section scripts{
+    <script src="~/Scripts/vue.js"></script>
+    <script src="~/Scripts/Vue/Trends-Vue.js"></script>
+}
