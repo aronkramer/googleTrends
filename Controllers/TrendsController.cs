@@ -27,9 +27,8 @@ namespace BillTracker.Controllers
             if (string.IsNullOrEmpty(dataGetter)) return View();
 
             var TheDefault = GetRoot().@default;
-            var doneMessage = Session["updateDone"];
+            //var doneMessage = Session["updateDone"];
             new TrendsRepository().DeleteOutdatedTrends();
-
             return RedirectToAction("SendUpdateTrendsEmail", "Email");
         }
 
@@ -105,7 +104,7 @@ namespace BillTracker.Controllers
 
             var TrendsRepository = new TrendsRepository();
             var done = TrendsRepository.Add(kw);
-            Session["updateDone"] = done;
+            //Session["updateDone"] = done;
 
             return csharp;
         }

@@ -224,6 +224,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SKUController.cs" />
     <Compile Include="Controllers\TrendsController.cs" />
+    <Compile Include="DataBase\EmailRepository.cs" />
     <Compile Include="DataBase\Repository.cs" />
     <Compile Include="DataBase\SkuRepository.cs" />
     <Compile Include="DataBase\TrendsRepository.cs" />
