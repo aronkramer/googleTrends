@@ -30,7 +30,7 @@ namespace BillTracker.DataBase
 
         public void DeleteOutdatedTrends()
         {
-            context.Trends.SqlQuery("Delete from Trends WHERE UpdatedOn <>(SELECT max(UpdatedOn) FROM Trends)");
+            context.Database.ExecuteSqlCommand("Delete from Trends WHERE UpdatedOn <> (SELECT max(UpdatedOn) FROM Trends)");
             context.SaveChanges();
         }
     }

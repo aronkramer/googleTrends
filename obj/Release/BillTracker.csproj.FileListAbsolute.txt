@@ -122,3 +122,5 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\pt-BR\Hangfire.Core.r
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\pt-PT\Hangfire.Core.resources.dll
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\zh\Hangfire.Core.resources.dll
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.emailsadded.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.emailtrendsbool.resources

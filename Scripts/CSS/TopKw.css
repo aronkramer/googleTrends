@@ -2,10 +2,24 @@
 
 }
 
-/*.viewMode1 {
-    background-color: #f4eb42
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-.editMode1 {
-    background-color: #ff6a00
-}*/
+button {
+    background: #99A3FF;
+    color: white;
+    border: 0;
+    padding: 6px 12px;
+    border-radius: 2px;
+}
+
+.button-container {
+    padding: 12px 24px;
+}
+
+    .button-container:not(:last-child) {
+        border-right: 1px solid #ddd;
+    }

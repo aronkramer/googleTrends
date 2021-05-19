@@ -4,7 +4,7 @@
     ViewBag.Title = "Google Trends";
 }
 
-<div>
+@*<div>
     @if (!String.IsNullOrEmpty(Model))
     {
         <div class="alert alert-success">
@@ -12,11 +12,11 @@
             <span>@Model - New Trends are ready for downloading</span>
         </div>
     }
-</div>
+</div>*@
 
 
 <div id="trendApp" style="margin:auto; width:50%; text-align:center">
-    <h2>Google Trends</h2>
+    <h2 style="color:rebeccapurple; text-decoration:underline">Google Trends</h2>
     <h3>Last Update - @ViewBag.LatestUpdate</h3>
     <hr />
     <div class="btn-toolbar">

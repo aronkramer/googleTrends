@@ -8,14 +8,17 @@ using System.Web;
 
 namespace BillTracker.DataBase
 {
-    public class EmailRepository 
-        //: Repository<Emails>
+    public class EmailRepository : Repository<Emails>
+    //: Repository<Emails>
     {
         private ApplicationDbContext context = new ApplicationDbContext();
 
-        public MailAddress GetAllEmails()
+        public List<MailAddress> GetGoogleTrendsEmails()
         {
-            return new MailAddress("ahron@platinumsuppliesllc.com"); 
+            var emails = DbSet.Where(d => d.GoogleTrends == true).Select(k => k.EmailAddress).ToList();
+            IEnumerable<MailAddress> addresses = emails.Select(i => new MailAddress(i));
+
+            return addresses.ToList(); 
         }
     }
 }

@@ -6,12 +6,16 @@
 
 <div id="kwApp">
     <center>
-        <h2>Top Keywords For Each Product.</h2>
+        <h2 style="color:rebeccapurple; text-decoration:underline">Top Keywords For Each Product.</h2>
         <div>
-            <button class="btn btn-success modalButton" data-toggle="modal" data-target="#myModal">Add Sku</button>
+            <button class="btn btn-success modalButton" data-toggle="modal" data-target="#myModal">Add Sku</button> |
 
             <a href="/SKU/DownloadKW" class="d-none d-sm-inline-block btn btn-primary shadow-sm">
                 <i class="fas fa-download fa-sm text-white-50"></i> Download
+            </a>  |
+
+            <a class="d-none d-sm-inline-block btn btn-warning shadow-sm">
+                <i class="fas fa-upload fa-sm text-white-50"></i> Bulk Upload
             </a>
         </div>
         <hr />
@@ -54,9 +58,9 @@
                 <div class="modal-body">
                     <form id="clearForm1" method="POST" action="/Sku/AddSku">
                         <center>
-                            <input name="Sku" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="SKU" required/>
+                            <input name="Sku" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="SKU" required />
                             <input name="Asin" class="form-control" style="margin:auto; display:inline-block; width:220px; text-transform:uppercase" placeholder="Asin" />
-                            <input name="Keyword" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="Keyword" required/>
+                            <input name="Keyword" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="Keyword" required />
                         </center>
                         <br />
                         <div class="modal-footer well">
@@ -106,7 +110,7 @@
                             <input name="Sku" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="SKU" />
                             <input name="Asin" class="form-control" style="margin:auto; display:inline-block; width:220px; text-transform:uppercase" placeholder="Asin" />
                             <input name="Keyword" class="form-control" style="margin:auto; display:inline-block; width:220px;" placeholder="Keyword" />
-                            <input hidden name="theid" v-model="itemQuestion.Id"/>
+                            <input hidden name="theid" v-model="itemQuestion.Id" />
                             <br /><br />
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="clear()">Cancel</button>

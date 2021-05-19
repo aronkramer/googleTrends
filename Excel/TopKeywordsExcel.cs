@@ -3,6 +3,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.Style;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace BillTracker.Excel
 {
@@ -19,24 +20,31 @@ namespace BillTracker.Excel
                 excelPackage.Workbook.Properties.Title = "Top Keywords";
                 var sheet = excelPackage.Workbook.Worksheets.Add("Top keywords excel");
                 sheet.Name = "Top keywords for SKU'S";
-                sheet.Column(2).Width = 10;
-                sheet.Column(3).Width = 30;
-                sheet.Column(4).Width = 20;
+                sheet.Cells["A1:C1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                sheet.Cells["A1:C1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.CadetBlue);
+                sheet.Column(1).Width = 30;
+                sheet.Column(2).Width = 15;
+                sheet.Column(3).Width = 20;
 
-                int serialNumber = 1;               
+                cell = sheet.Cells[rowIndex, 1];
+                cell.Value = "SKU";
 
+                cell = sheet.Cells[rowIndex, 2];
+                cell.Value = "Asin";
+
+                cell = sheet.Cells[rowIndex, 3];
+                cell.Value = "Keyword";
+
+                rowIndex = 2;
                 foreach (TopKeywordViewModels kw in topKeywords)
                 {
                     cell = sheet.Cells[rowIndex, 1];
-                    cell.Value = serialNumber++;
-
-                    cell = sheet.Cells[rowIndex, 2];
                     cell.Value = kw.SKU;
 
-                    cell = sheet.Cells[rowIndex, 3];
+                    cell = sheet.Cells[rowIndex, 2];
                     cell.Value = kw.Asin;
 
-                    cell = sheet.Cells[rowIndex, 4];
+                    cell = sheet.Cells[rowIndex, 3];
                     cell.Value = kw.Keyword;
 
                     rowIndex = rowIndex + 1;
@@ -44,5 +52,6 @@ namespace BillTracker.Excel
                 return excelPackage.GetAsByteArray();
             }
         }
+                
     }
 }

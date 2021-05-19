@@ -122,3 +122,5 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.Extensions.
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.emailsadded.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.emailtrendsbool.resources

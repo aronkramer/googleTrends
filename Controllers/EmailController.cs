@@ -17,13 +17,7 @@ namespace BillTracker.Controllers
             var fromAddress = new MailAddress(ConfigurationManager.AppSettings["Email"].ToString(),
                 "PlatinumSupplies Cloud");
 
-            // TODO need to change this to list of emails
-            var dataemails = new EmailRepository().GetAllEmails();
-
-            var emails = new List<MailAddress>();
-            var toAddress = dataemails;
-            emails.Add(toAddress);
-            // until here
+            var emails = new EmailRepository().GetGoogleTrendsEmails();
 
             string fromPassword = ConfigurationManager.AppSettings["Password"].ToString();
             var timeInNJ = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, TimeZoneInfo.Local.Id, "Eastern Standard Time");
@@ -35,11 +29,11 @@ namespace BillTracker.Controllers
                                 or use the button below.
                             </div>
                     <div>
-                        <button href='https://platinumsupplies.cloud/Trends/DownloadTrends'
+                        <a href='https://platinumsupplies.cloud/Trends/DownloadTrends'
                             style = 'display: inline-block; background-color: #4e73df; border-radius: 10px; border: 4px double #cccccc;
                             text-align: center; font-size: 28px; padding: 20px; length: 100px; cursor: pointer; margin: 5px; color:white;'>
                             Download here!
-                        </button>
+                        </a>
                     </div>";
             var smtp = new SmtpClient
             {

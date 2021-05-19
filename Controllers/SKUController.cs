@@ -2,11 +2,18 @@
 using BillTracker.Excel;
 using BillTracker.Helpers;
 using BillTracker.Models;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using OfficeOpenXml.Style;
+using System.Drawing;
+using System.Globalization;
+using System.Threading;
 
 namespace BillTracker.Controllers
 {
@@ -49,7 +56,7 @@ namespace BillTracker.Controllers
         [HttpPost]
         public ActionResult EditSku(TopKeywordViewModels kw, int theid)
         {
-            if(kw.Asin == null && kw.SKU == null && kw.Keyword == null)
+            if (kw.Asin == null && kw.SKU == null && kw.Keyword == null)
             {
                 return RedirectToAction("TopKw");
             }
@@ -61,7 +68,7 @@ namespace BillTracker.Controllers
 
             var updatekw = kw.ToViewModelSingle<TopKeywordViewModels, TopKeywords>();
             repo.EditSku(updatekw, theid);
-            
+
             return RedirectToAction("TopKw");
         }
 
@@ -76,5 +83,39 @@ namespace BillTracker.Controllers
             Response.End();
             return RedirectToAction("TopKw");
         }
+
+        //public async Task<ActionResult> UploadKWAsync()
+        //{
+        //    var file = new FileInfo("");
+        //    List<TopKeywordViewModels> kWFromExcel = LoadExcelFile(file);
+        //    return RedirectToAction("TopKw");
+        //}
+
+        //private static List<TopKeywordViewModels> LoadExcelFile(FileInfo file)
+        //{
+        //    var output = new List<TopKeywordViewModels>();
+        //    using (var package = new ExcelPackage(file))
+        //    {
+        //        while (!file.Exists)
+        //        {
+        //            Thread.Sleep(TimeSpan.FromSeconds(5));
+        //        }
+        //        var ws = package.Workbook.Worksheets[0];
+
+        //        int row = 2;
+        //        int col = 1;
+
+        //        while (string.IsNullOrWhiteSpace(ws.Cells[row, col].Value?.ToString()) == false)
+        //        {
+        //            var t = new TopKeywordViewModels();
+        //            t.SKU = ws.Cells[row, col].Value.ToString();
+        //            t.Asin = ws.Cells[row, col + 1].Value.ToString();
+        //            t.Keyword = ws.Cells[row, col + 2].Value.ToString();
+        //            output.Add(t);
+        //            row += 1;
+        //        }
+        //    }
+        //    return output;
+        //}
     }
 }
