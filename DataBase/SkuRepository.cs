@@ -30,6 +30,13 @@ namespace BillTracker.DataBase
             context.SaveChanges();
         }
 
+        public void BulkEdit(IEnumerable<TopKeywords> kws)
+        {
+            context.Database.ExecuteSqlCommand("update TopKeywords set Deleted = 1");
+            context.TopKeywords.AddRange(kws);
+            context.SaveChanges();
+        }
+
         public string GetKeywords()
         {
             return String.Join(",", GetAllKeywords());

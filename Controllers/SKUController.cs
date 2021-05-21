@@ -10,10 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using OfficeOpenXml.Style;
-using System.Drawing;
-using System.Globalization;
-using System.Threading;
 
 namespace BillTracker.Controllers
 {
@@ -84,22 +80,27 @@ namespace BillTracker.Controllers
             return RedirectToAction("TopKw");
         }
 
-        //below here is where i need to focus
         [HttpPost]
-        public static async Task<ActionResult> UploadExcel(HttpPostedFileBase file)
+        public async Task<ActionResult> UploadExcel(HttpPostedFileBase excelFile)
         {
-            string helle = file.ToString();
-            await UploadKWAsync(helle);
-            return null;
+            string excel = Server.MapPath("~/ReadExcelTK/" + excelFile.FileName);
+            // Deletes previous files before updating new keywords
+            Array.ForEach(Directory.GetFiles(Server.MapPath("~/ReadExcelTK/")), System.IO.File.Delete);
+            excelFile.SaveAs(excel);
+
+            var bulkKeywords = await UploadKWAsync(excel);
+            var repo = new SkuRepository();
+            var updatekws = bulkKeywords.ToViewModel<TopKeywordViewModels, TopKeywords>();
+            repo.BulkEdit(updatekws);
+
+            return RedirectToAction("TopKw");
         }
 
-        public static async Task<ActionResult> UploadKWAsync(string filez)
+        private static async Task<List<TopKeywordViewModels>> UploadKWAsync(string excel)
         {
-            var file = new FileInfo(filez);
-            //var file = new FileInfo(@"C:\Users\talkp\OneDrive\Desktop\Topkeywordsq.xlsx");
+            var file = new FileInfo(excel);
             List<TopKeywordViewModels> kWFromExcel = await LoadExcelFile(file);
-            var vv = kWFromExcel;
-            return null;
+            return kWFromExcel;
         }
 
         private static async Task<List<TopKeywordViewModels>> LoadExcelFile(FileInfo file)
@@ -116,16 +117,14 @@ namespace BillTracker.Controllers
                 while (string.IsNullOrWhiteSpace(ws.Cells[row, col].Value?.ToString()) == false)
                 {
                     var t = new TopKeywordViewModels();
-                    t.SKU = ws.Cells[row, col].Value.ToString();
-                    t.Asin = ws.Cells[row, col + 1].Value.ToString();
-                    t.Keyword = ws.Cells[row, col + 2].Value.ToString();
+                    t.SKU = ws.Cells[row, col].Value == null ? "" : ws.Cells[row, col].Value.ToString();
+                    t.Asin = ws.Cells[row, col + 1].Value == null ? null : ws.Cells[row, col + 1].Value.ToString();
+                    t.Keyword = ws.Cells[row, col + 2].Value == null ? "PLEASE ADD THE KEYWORD" : ws.Cells[row, col + 2].Value.ToString();
                     output.Add(t);
                     row += 1;
                 }
             }
             return output;
         }
-
-        //we are done here
     }
 }

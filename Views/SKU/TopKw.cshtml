@@ -14,7 +14,7 @@
                 <i class="fas fa-download fa-sm text-white-50"></i> Download
             </a>  |
 
-            <a class="d-none d-sm-inline-block btn btn-warning shadow-sm">
+            <a class="d-none d-sm-inline-block btn btn-warning shadow-sm modalButton" data-toggle="modal" data-target="#uploadModal">
                 <i class="fas fa-upload fa-sm text-white-50"></i> Bulk Upload
             </a>
         </div>
@@ -118,6 +118,28 @@
                             </div>
                         </form>
                     </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal bulk upload -->
+    <div id="uploadModal" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <form method="post" action="/sku/UploadExcel" enctype="multipart/form-data">
+                            <input type="file" name="excelFile" />
+                            <button type="submit">Submit</button>
+                        </form>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
