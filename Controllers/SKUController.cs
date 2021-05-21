@@ -84,38 +84,48 @@ namespace BillTracker.Controllers
             return RedirectToAction("TopKw");
         }
 
-        //public async Task<ActionResult> UploadKWAsync()
-        //{
-        //    var file = new FileInfo("");
-        //    List<TopKeywordViewModels> kWFromExcel = LoadExcelFile(file);
-        //    return RedirectToAction("TopKw");
-        //}
+        //below here is where i need to focus
+        [HttpPost]
+        public static async Task<ActionResult> UploadExcel(HttpPostedFileBase file)
+        {
+            string helle = file.ToString();
+            await UploadKWAsync(helle);
+            return null;
+        }
 
-        //private static List<TopKeywordViewModels> LoadExcelFile(FileInfo file)
-        //{
-        //    var output = new List<TopKeywordViewModels>();
-        //    using (var package = new ExcelPackage(file))
-        //    {
-        //        while (!file.Exists)
-        //        {
-        //            Thread.Sleep(TimeSpan.FromSeconds(5));
-        //        }
-        //        var ws = package.Workbook.Worksheets[0];
+        public static async Task<ActionResult> UploadKWAsync(string filez)
+        {
+            var file = new FileInfo(filez);
+            //var file = new FileInfo(@"C:\Users\talkp\OneDrive\Desktop\Topkeywordsq.xlsx");
+            List<TopKeywordViewModels> kWFromExcel = await LoadExcelFile(file);
+            var vv = kWFromExcel;
+            return null;
+        }
 
-        //        int row = 2;
-        //        int col = 1;
+        private static async Task<List<TopKeywordViewModels>> LoadExcelFile(FileInfo file)
+        {
+            var output = new List<TopKeywordViewModels>();
+            using (var package = new ExcelPackage(file))
+            {
+                await package.LoadAsync(file);
+                var ws = package.Workbook.Worksheets[0];
 
-        //        while (string.IsNullOrWhiteSpace(ws.Cells[row, col].Value?.ToString()) == false)
-        //        {
-        //            var t = new TopKeywordViewModels();
-        //            t.SKU = ws.Cells[row, col].Value.ToString();
-        //            t.Asin = ws.Cells[row, col + 1].Value.ToString();
-        //            t.Keyword = ws.Cells[row, col + 2].Value.ToString();
-        //            output.Add(t);
-        //            row += 1;
-        //        }
-        //    }
-        //    return output;
-        //}
+                int row = 2;
+                int col = 1;
+
+                while (string.IsNullOrWhiteSpace(ws.Cells[row, col].Value?.ToString()) == false)
+                {
+                    var t = new TopKeywordViewModels();
+                    t.SKU = ws.Cells[row, col].Value.ToString();
+                    t.Asin = ws.Cells[row, col + 1].Value.ToString();
+                    t.Keyword = ws.Cells[row, col + 2].Value.ToString();
+                    output.Add(t);
+                    row += 1;
+                }
+            }
+            return output;
+        }
+
+        //we are done here
     }
 }
