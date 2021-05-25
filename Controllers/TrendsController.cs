@@ -29,7 +29,9 @@ namespace BillTracker.Controllers
             var TheDefault = GetRoot().@default;
             //var doneMessage = Session["updateDone"];
             new TrendsRepository().DeleteOutdatedTrends();
-            return RedirectToAction("SendUpdateTrendsEmail", "Email");
+            new EmailController().SendUpdateTrendsEmail();
+            //return RedirectToAction("SendUpdateTrendsEmail", "Email");
+            return View();
         }
 
         public List<TrendsViewModels> GetTrends()
@@ -117,8 +119,6 @@ namespace BillTracker.Controllers
             }
             //System.Threading.Thread.Sleep(15 * 1000);
             var web = new WebClient();
-            //Guid g = Guid.NewGuid();
-            //web.Headers["User-Agent"] = g.ToString();
             string dataResults = web.DownloadString($"https://loving-poitras-a08051.netlify.app/.netlify/functions/getTrends/?bob={searchTerm}");
             //string fakeResults = "{ \"default\":{ \"timelineData\":[{ \"time\":\"1578182400\",\"formattedTime\":\"Jan 5 – 11, 2020\",\"formattedAxisTime\":\"Jan 5, 2020\",\"value\":[76,30,59,13,8],\"hasData\": [true,true,true,true,true],\"formattedValue\":[\"76\",\"30\",\"59\",\"13\",\"8\"]},{ \"time\":\"1578787200\",\"formattedTime\":\"Jan 12 – 18, 2020\",\"formattedAxisTime\":\"Jan 12, 2020\",\"value\":[93,37,60,20,10],\"hasData\": [true,true,true,true,true],\"formattedValue\":[\"93\",\"37\",\"60\",\"20\",\"10\"]},{ \"time\":\"1579392000\",\"formattedTime\":\"Jan 19 – 25, 2020\",\"formattedAxisTime\":\"Jan 19, 2020\",\"value\":[100,35,71,17,10],\"hasData\":[true,true,true,true,true],\"formattedValue\":[\"100\",\"35\",\"71\",\"17\",\"10\"]},{ \"time\":\"1579996800\",\"formattedTime\":\"Jan 26 – Feb 1, 2020\",\"formattedAxisTime\":\"Jan 26, 2020\",\"value\":[84,36,51,18,13],\"hasData\":[true,true,true,true,true],\"formattedValue\":[\"84\",\"36\",\"51\",\"18\",\"13\"]},{ \"time\":\"1580601600\",\"formattedTime\":\"Feb 2 – 8, 2020\",\"formattedAxisTime\":\"Feb 2, 2020\",\"value\":[90,30,50,15,14],\"hasData\":[true,true,true,true,true],\"formattedValue\":[\"90\",\"30\",\"50\",\"15\",\"14\"]},{ \"time\":\"1615075200\",\"formattedTime\":\"Mar 7 – 13, 2021\",\"formattedAxisTime\":\"Mar 7, 2021\",\"value\":[62,26,52,23,10],\"hasData\":[true,true,true,true,true],\"formattedValue\":[\"62\",\"26\",\"52\",\"23\",\"10\"],\"isPartial\":true}],\"averages\":[78,31,58,29,14]} }";
             return dataResults;

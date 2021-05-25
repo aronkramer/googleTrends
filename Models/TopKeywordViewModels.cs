@@ -8,7 +8,7 @@ using System.Web;
 namespace BillTracker.Models
 {
     public class TopKeywords
-    {   
+    {
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "VARCHAR")]
@@ -23,6 +23,8 @@ namespace BillTracker.Models
         [Required]
         public string Keyword { get; set; }
         public bool Deleted { get; set; }
+        [Required]
+        public int Version { get; set; }
     }
 
     public class TopKeywordViewModels
@@ -31,5 +33,6 @@ namespace BillTracker.Models
         public string SKU { get; set; }
         public string Asin { get; set; }
         public string Keyword { get; set; }
+        public int Version { get; set; }
     }
 }

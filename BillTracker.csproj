@@ -266,6 +266,10 @@
     <Compile Include="Migrations\202105131627019_emailtrendsbool.Designer.cs">
       <DependentUpon>202105131627019_emailtrendsbool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105251339477_kwVersioncontrol.cs" />
+    <Compile Include="Migrations\202105251339477_kwVersioncontrol.Designer.cs">
+      <DependentUpon>202105251339477_kwVersioncontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EmailViewModels.cs" />
@@ -2377,6 +2381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105131627019_emailtrendsbool.resx">
       <DependentUpon>202105131627019_emailtrendsbool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251339477_kwVersioncontrol.resx">
+      <DependentUpon>202105251339477_kwVersioncontrol.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

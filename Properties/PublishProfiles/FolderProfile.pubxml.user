@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\talkp\Desktop\platinumsuppliesStudio</_PublishTargetUrl>
-    <History>True|2021-03-22T15:17:16.6124894Z;</History>
+    <History>True|2021-05-25T15:22:56.6792821Z;True|2021-03-22T17:17:16.6124894+02:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -15,10 +15,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/11/2013 00:29:20</publishTime>
     </File>
     <File Include="bin/BillTracker.dll">
-      <publishTime>05/19/2021 15:46:49</publishTime>
+      <publishTime>05/25/2021 18:22:49</publishTime>
     </File>
     <File Include="bin/BillTracker.pdb">
-      <publishTime>05/19/2021 15:46:49</publishTime>
+      <publishTime>05/25/2021 18:22:49</publishTime>
     </File>
     <File Include="bin/ca/Hangfire.Core.resources.dll">
       <publishTime>01/15/2021 12:31:22</publishTime>
@@ -33,7 +33,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EPPlus.dll">
-      <publishTime>10/08/2017 22:48:52</publishTime>
+      <publishTime>05/12/2021 09:14:22</publishTime>
     </File>
     <File Include="bin/es/Hangfire.Core.resources.dll">
       <publishTime>01/15/2021 12:31:22</publishTime>
@@ -72,7 +72,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/26/2020 01:59:14</publishTime>
     </File>
     <File Include="bin/Microsoft.IO.RecyclableMemoryStream.dll">
-      <publishTime>11/24/2020 22:57:20</publishTime>
+      <publishTime>03/10/2021 23:48:48</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
       <publishTime>09/08/2020 20:51:20</publishTime>
@@ -6330,7 +6330,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/31/2021 18:25:40</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>05/19/2021 15:45:05</publishTime>
+      <publishTime>05/21/2021 12:34:04</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>01/31/2021 18:25:49</publishTime>
@@ -6363,7 +6363,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/31/2021 18:25:49</publishTime>
     </File>
     <File Include="Views/SKU/TopKw.cshtml">
-      <publishTime>05/14/2021 17:48:32</publishTime>
+      <publishTime>05/21/2021 14:05:59</publishTime>
     </File>
     <File Include="Views/Trends/Index.cshtml">
       <publishTime>05/19/2021 15:44:24</publishTime>
@@ -6375,7 +6375,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/31/2021 18:25:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/13/2021 21:19:07</publishTime>
+      <publishTime>05/21/2021 13:42:01</publishTime>
     </File>
   </ItemGroup>
 </Project>

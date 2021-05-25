@@ -20,7 +20,7 @@ namespace BillTracker.DataBase
 
         public List<TopKeywords> GetAllNotDeleted()
         {
-            return DbSet.Where(d => d.Deleted == false).ToList();
+            return DbSet.Where(d => d.Deleted == false && d.Version == DbSet.Max(h => (int?)h.Version)).ToList();
         }
 
         public void EditSku(TopKeywords kw, int theid)
@@ -30,9 +30,13 @@ namespace BillTracker.DataBase
             context.SaveChanges();
         }
 
+        public int LatestVersion()
+        {
+            return DbSet.Max(h => h.Version);
+        }
+
         public void BulkEdit(IEnumerable<TopKeywords> kws)
         {
-            context.Database.ExecuteSqlCommand("update TopKeywords set Deleted = 1");
             context.TopKeywords.AddRange(kws);
             context.SaveChanges();
         }
@@ -45,7 +49,7 @@ namespace BillTracker.DataBase
 
         private List<string> GetAllKeywords()
         {
-            return DbSet.Where(d => d.Deleted == false).Select(k => k.Keyword).ToList();            
+            return DbSet.Where(d => d.Deleted == false && d.Version == DbSet.Max(h => (int?)h.Version)).Select(k => k.Keyword).ToList();            
         }
     }
 }

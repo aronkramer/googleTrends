@@ -44,6 +44,7 @@ namespace BillTracker.Controllers
         public ActionResult AddSku(TopKeywords kw)
         {
             var repo = new SkuRepository();
+            kw.Version = repo.LatestVersion();
             repo.Add(kw);
             repo.SaveChanges();
             return RedirectToAction("TopKw");
@@ -61,7 +62,7 @@ namespace BillTracker.Controllers
             if (kw.Asin == null) kw.Asin = original.Asin;
             if (kw.SKU == null) kw.SKU = original.SKU;
             if (kw.Keyword == null) kw.Keyword = original.Keyword;
-
+            kw.Version = repo.LatestVersion();
             var updatekw = kw.ToViewModelSingle<TopKeywordViewModels, TopKeywords>();
             repo.EditSku(updatekw, theid);
 
@@ -90,6 +91,11 @@ namespace BillTracker.Controllers
 
             var bulkKeywords = await UploadKWAsync(excel);
             var repo = new SkuRepository();
+            var updatev = repo.LatestVersion();            
+            foreach (var kw in bulkKeywords)
+            {
+                kw.Version = updatev + 1;
+            }
             var updatekws = bulkKeywords.ToViewModel<TopKeywordViewModels, TopKeywords>();
             repo.BulkEdit(updatekws);
 
