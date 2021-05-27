@@ -218,6 +218,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AmazonReportsController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\EmailsSettingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Controllers\SKUController.cs" />
     <Compile Include="Controllers\TrendsController.cs" />
     <Compile Include="DataBase\EmailRepository.cs" />
+    <Compile Include="DataBase\ReportsRepository.cs" />
     <Compile Include="DataBase\Repository.cs" />
     <Compile Include="DataBase\SkuRepository.cs" />
     <Compile Include="DataBase\TrendsRepository.cs" />
@@ -270,12 +272,18 @@
     <Compile Include="Migrations\202105251339477_kwVersioncontrol.Designer.cs">
       <DependentUpon>202105251339477_kwVersioncontrol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105271832109_AmazonReports.cs" />
+    <Compile Include="Migrations\202105271832109_AmazonReports.Designer.cs">
+      <DependentUpon>202105271832109_AmazonReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CampaignsReport.cs" />
     <Compile Include="Models\EmailViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Root.cs" />
+    <Compile Include="Models\SearchTermReport.cs" />
     <Compile Include="Models\TopKeywordViewModels.cs" />
     <Compile Include="Models\TrendsViewModels.cs" />
     <Compile Include="PrintJob.cs" />
@@ -2343,7 +2351,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CampaignReport\" />
     <Folder Include="ReadExcelTK\" />
+    <Folder Include="Views\AmazonReports\" />
     <Folder Include="Views\Email\" />
   </ItemGroup>
   <ItemGroup>
@@ -2384,6 +2394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105251339477_kwVersioncontrol.resx">
       <DependentUpon>202105251339477_kwVersioncontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105271832109_AmazonReports.resx">
+      <DependentUpon>202105271832109_AmazonReports.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

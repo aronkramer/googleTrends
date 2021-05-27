@@ -33,5 +33,7 @@ namespace BillTracker.Models
         public DbSet<TopKeywords> TopKeywords { get; set; }
         public DbSet<Trends> Trends { get; set; }
         public DbSet<Emails> Emails { get; set; }
+        public DbSet<SearchTermReport> SearchTermReport { get; set; }
+        public DbSet<CampaignsReport> CampaignsReport { get; set; }
     }
 }

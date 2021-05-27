@@ -10,6 +10,7 @@ using BillTracker.Models;
 
 namespace BillTracker.Controllers
 {
+    [Authorize]
     public class EmailsSettingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
