@@ -17,7 +17,6 @@ namespace BillTracker.Models
         public string Campaign { get; set; }
         [Column(TypeName = "NVARCHAR")]
         [StringLength(250)]
-        [Required]
         public string Sku { get; set; }
     }
 

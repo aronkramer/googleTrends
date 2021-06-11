@@ -35,5 +35,6 @@ namespace BillTracker.Models
         public DbSet<Emails> Emails { get; set; }
         public DbSet<SearchTermReport> SearchTermReport { get; set; }
         public DbSet<CampaignsReport> CampaignsReport { get; set; }
+        public DbSet<TopReportKW> TopReportKWs { get; set; }
     }
 }

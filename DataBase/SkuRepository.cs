@@ -44,12 +44,13 @@ namespace BillTracker.DataBase
         public string GetKeywords()
         {
             return String.Join(",", GetAllKeywords());
-            //return "green car, blue bike, yellow hat, purple person, black house";
         }
 
         private List<string> GetAllKeywords()
         {
-            return DbSet.Where(d => d.Deleted == false && d.Version == DbSet.Max(h => (int?)h.Version)).Select(k => k.Keyword).ToList();            
+            return context.Database.SqlQuery<TopReportKWViewModel>("KeywordsForGoogleTrends").ToList().Select(s => s.SearchTerm).ToList();
+            
+            //return DbSet.Where(d => d.Deleted == false && d.Version == DbSet.Max(h => (int?)h.Version)).Select(k => k.Keyword).ToList();
         }
     }
 }

@@ -1,61 +1,86 @@
 ﻿@model string
 
 @{
-    ViewBag.Title = "Google Trends";
+    ViewBag.Title = "Google Trends / Upload Amazon";
 }
-
-@*<div>
-    @if (!String.IsNullOrEmpty(Model))
-    {
-        <div class="alert alert-success">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <span>@Model - New Trends are ready for downloading</span>
+<div id="trendApp">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm rounded-lg mt-5" style="border-left-color:#f6c23e; border-left-width:5px">
+                    <div class="card-body">
+                        <center>
+                            <h2 style="color:#f6c23e;">Google Trends</h2>
+                            <h5>Latest Update - @ViewBag.LatestUpdate</h5>
+                        </center>
+                    </div>
+                    <div class="card-body">
+                        <div class="btn-toolbar">
+                            @*<div class="mr-3">
+                                    <button class="btn btn-lg btn-success modalButton" data-toggle="modal" data-target="#UpdateModal">Update Trends</button>
+                                </div>*@
+                            <a href="/Trends/DownloadTrends" class="btn btn-lg btn-warning" style="margin: 24px auto;">
+                                <i class="fas fa-download fa-sm text-white-50" style="color:white"></i> Download Latest Trends
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    }
-</div>*@
-
-
-<div id="trendApp" style="margin:auto; width:50%; text-align:center">
-    <h2 style="color:rebeccapurple; text-decoration:underline">Google Trends</h2>
-    <h3>Last Update - @ViewBag.LatestUpdate</h3>
-    <hr />
-    <div class="btn-toolbar">
-        @*<div class="mr-3">
-            <button class="btn btn-lg btn-success modalButton" data-toggle="modal" data-target="#UpdateModal">Update Trends</button>
-        </div>*@
-
-        <a href="/Trends/DownloadTrends" class="btn btn-lg btn-primary">
-            <i class="fas fa-download fa-sm text-white-50"></i> Download Latest Trends
-        </a>
     </div>
-</div>
-<hr />
-<div>
-    <center><form method="post" action="/AmazonReports/ImportCampaignReport" enctype="multipart/form-data">
-    <input type="file" name="excelFile" />
-    <button type="submit">Upload Campaign report</button>
-</form></center>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm rounded-lg mt-5" style="border-left-color:#1cc88a; border-left-width:5px">
+                    <div class="card-body">
+                        <center><h2 style="color:#1cc88a;">Upload Amazon Reports</h2></center>
+                    </div>
+                    <div class="card-body">
+                        <div style="margin-top:15px">
+                            <form method="post" action="/AmazonReports/ImportCampaignReport" enctype="multipart/form-data">
+                                1  <input type="file" name="excelFile" />1
+                                <button type="submit" class="btn btn-outline-success">Upload Campaign report</button>
+                            </form>
+                        </div>
+                        <br />
+                        <div style="margin-top:45px">
+                            <form method="post" action="/AmazonReports/ImportSearchTerm" enctype="multipart/form-data">
+                                2   <input type="file" name="excelFile" />2
+                                <button type="submit" class="btn btn-outline-success">Upload search term</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body" style="margin-top:15px">
+                        <center>
+                            3<button type="submit" class="btn btn-success" v-on:click="cleanData">clean data</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Modal add sku-->
 @*<div id="UpdateModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content modal-lg">
-            <div class="modal-body">
-                <h3>Please Only Update Once A Week. This can take some time.</h3>
-                <h3>Please don't click on any buttons on this page while it's updating.</h3>
-               
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-lg btn-danger" data-dismiss="modal">Cancel</button>
-                <form action="/trends/index">
-                    <input value="hello" type="hidden" name="dataGetter" />
-                    <button class="btn btn-lg btn-success">Begin Updating Now!</button>
-                </form>
+        <div class="modal-dialog">
+            <div class="modal-content modal-lg">
+                <div class="modal-body">
+                    <h3>Please Only Update Once A Week. This can take some time.</h3>
+                    <h3>Please don't click on any buttons on this page while it's updating.</h3>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-lg btn-danger" data-dismiss="modal">Cancel</button>
+                    <form action="/trends/index">
+                        <input value="hello" type="hidden" name="dataGetter" />
+                        <button class="btn btn-lg btn-success">Begin Updating Now!</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 
 
 

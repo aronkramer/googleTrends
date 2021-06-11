@@ -93,7 +93,6 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\System.ComponentModel
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EPPlus.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.softDelete.resources
-C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.csprojAssemblyReference.cache
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.trends.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.trendsRankNull.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.skuKeywordRequired.resources
@@ -126,3 +125,10 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Mig
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.emailtrendsbool.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.kwVersioncontrol.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.AmazonReports.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.csproj.AssemblyReference.cache
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.skuNullable.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EntityFramework.BulkInsert.dll
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EntityFramework.BulkInsert.dll.config
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.topreport.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.requiredaddedReport.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.nullsales.resources
