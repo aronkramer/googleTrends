@@ -41,15 +41,9 @@ namespace BillTracker.DataBase
             context.SaveChanges();
         }
 
-        public string GetKeywords()
+        public List<TopReportKWViewModel> GetAllKeywords()
         {
-            return String.Join(",", GetAllKeywords());
-        }
-
-        private List<string> GetAllKeywords()
-        {
-            return context.Database.SqlQuery<TopReportKWViewModel>("KeywordsForGoogleTrends").ToList().Select(s => s.SearchTerm).ToList();
-            
+            return context.Database.SqlQuery<TopReportKWViewModel>("KeywordsForGoogleTrends").ToList();            
             //return DbSet.Where(d => d.Deleted == false && d.Version == DbSet.Max(h => (int?)h.Version)).Select(k => k.Keyword).ToList();
         }
     }

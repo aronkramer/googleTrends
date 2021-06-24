@@ -132,3 +132,4 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EntityFramework.BulkI
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.topreport.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.requiredaddedReport.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.nullsales.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Debug\BillTracker.Migrations.productInTrends.resources

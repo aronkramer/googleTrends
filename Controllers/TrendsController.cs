@@ -55,14 +55,10 @@ namespace BillTracker.Controllers
         public Root GetRoot()
         {
             // Needed if we start updating before a new day. we want all in this update to have the same day. 
-            // For line 65
             var today = DateTime.Today;
 
             var SkuRepository = new SkuRepository();
-            var searchTerm1 = SkuRepository.GetKeywords();
-
-            // Getting all the keywords in a list of 5 at a time
-            var ListOfSearchTerms = searchTerm1.Split(',');
+            var searchTerm1 = SkuRepository.GetAllKeywords();
 
             // taking the list and root out of the scoop to have access after
             var kw = new List<TrendsViewModels>();
@@ -70,15 +66,15 @@ namespace BillTracker.Controllers
 
             // Go through the list of keywords and get the trends for all
 
-            foreach (var st in ListOfSearchTerms)
+            foreach (var st in searchTerm1)
             {
-                var result = Trends(st);
+                var result = Trends(st.SearchTerm);
 
                 int num = 0;
                 while (result == "" || result.Contains("302 Moved"))
                 {
                     System.Threading.Thread.Sleep((num + 1) * 60 * 1000);
-                    result = Trends(st);
+                    result = Trends(st.SearchTerm);
                     num++;
                     if (num == 5)
                     {
@@ -88,7 +84,7 @@ namespace BillTracker.Controllers
                 }
                 if (result == "{\"default\":{\"timelineData\":[],\"averages\":[]}}")
                 {
-                    kw.Add(new TrendsViewModels { Keyword = st, UpdatedOn = today, NoData = true });
+                    //kw.Add(new TrendsViewModels { Keyword = st.SearchTerm, UpdatedOn = today, NoData = true });
                 }
 
                 if (result != "" && !result.Contains("302 Moved"))
@@ -98,7 +94,7 @@ namespace BillTracker.Controllers
                     {
                         var date = trends.formattedAxisTime;
                         int rank = trends.value[0];
-                        kw.Add(new TrendsViewModels { Keyword = st, Date = date, Ranking = rank, UpdatedOn = today, NoData = false });
+                        kw.Add(new TrendsViewModels {  Product = st.Sku ,Keyword = st.SearchTerm, Date = date, Ranking = rank, UpdatedOn = today, NoData = false });
                     }
                 }
             }

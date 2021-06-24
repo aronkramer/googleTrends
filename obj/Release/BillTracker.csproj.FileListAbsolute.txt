@@ -85,7 +85,6 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Antlr3.Runtime.pdb
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.csprojAssemblyReference.cache
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.inital.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.allownulls.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.softDelete.resources
@@ -125,3 +124,12 @@ C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\zh-TW\Hangfire.Core.r
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.emailsadded.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.emailtrendsbool.resources
 C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.kwVersioncontrol.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EntityFramework.BulkInsert.dll
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\bin\EntityFramework.BulkInsert.dll.config
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.csproj.AssemblyReference.cache
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.AmazonReports.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.skuNullable.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.topreport.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.requiredaddedReport.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.nullsales.resources
+C:\Users\talkp\source\repos\BillTrackerApp\BillTracker\obj\Release\BillTracker.Migrations.productInTrends.resources

@@ -13,6 +13,9 @@ namespace BillTracker.Models
         public int Id { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(150)]
+        public string Product { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(150)]
         public string Keyword { get; set; }
         [Column(TypeName = "VARCHAR")]
         [StringLength(150)]
@@ -25,6 +28,7 @@ namespace BillTracker.Models
     public class TrendsViewModels
     {
         public int Id { get; set; }
+        public string Product { get; set; }
         public string Keyword { get; set; }
         public string Date { get; set; }
         public int Ranking { get; set; }

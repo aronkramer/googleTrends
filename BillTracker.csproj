@@ -296,6 +296,10 @@
     <Compile Include="Migrations\202106101414523_nullsales.Designer.cs">
       <DependentUpon>202106101414523_nullsales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161110387_productInTrends.cs" />
+    <Compile Include="Migrations\202106161110387_productInTrends.Designer.cs">
+      <DependentUpon>202106161110387_productInTrends.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CampaignsReport.cs" />
@@ -2431,6 +2435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106101414523_nullsales.resx">
       <DependentUpon>202106101414523_nullsales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161110387_productInTrends.resx">
+      <DependentUpon>202106161110387_productInTrends.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
