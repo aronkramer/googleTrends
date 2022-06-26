@@ -5,7 +5,7 @@
 
 <h2>@ViewBag.Title.</h2>
 
-@*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
@@ -36,7 +36,7 @@
     </div>
     <hr />
     
-}*@
+}
 
 <div>
     <h1>We are sorry to inform you that at the moment we are no longer taking registration. If you feel this is an error please contact the admin</h1>

@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\talkp\Desktop\platinumsuppliesStudio</_PublishTargetUrl>
-    <History>True|2021-05-25T15:22:56.6792821Z;True|2021-03-22T17:17:16.6124894+02:00;</History>
+    <History>True|2022-06-12T15:44:49.0901379Z;True|2021-05-25T18:22:56.6792821+03:00;True|2021-03-22T17:17:16.6124894+02:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -15,10 +15,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/11/2013 00:29:20</publishTime>
     </File>
     <File Include="bin/BillTracker.dll">
-      <publishTime>06/16/2021 15:09:32</publishTime>
+      <publishTime>06/12/2022 18:44:46</publishTime>
     </File>
     <File Include="bin/BillTracker.pdb">
-      <publishTime>06/16/2021 15:09:32</publishTime>
+      <publishTime>06/12/2022 18:44:46</publishTime>
     </File>
     <File Include="bin/ca/Hangfire.Core.resources.dll">
       <publishTime>01/15/2021 12:31:22</publishTime>
@@ -6297,7 +6297,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/16/2021 19:05:11</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>02/16/2021 19:08:30</publishTime>
+      <publishTime>02/09/2022 15:51:56</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>01/31/2021 18:25:49</publishTime>
@@ -6381,7 +6381,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/31/2021 18:25:40</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/11/2021 12:22:22</publishTime>
+      <publishTime>06/12/2022 18:44:47</publishTime>
     </File>
   </ItemGroup>
 </Project>
