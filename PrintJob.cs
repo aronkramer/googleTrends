@@ -12,6 +12,7 @@ namespace BillTracker
         public static void Print()
         {
             //new Controllers.TrendsController().HangfirePilot();
+            //Test
         }
     }
 
